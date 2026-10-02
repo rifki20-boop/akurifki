@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CV Rai Haidar Muhadzib</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e8e8e8;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #444;
+        }
+
+        /* =========================
+           HALAMAN CV
+        ========================= */
+
+        .cv {
+            position: relative;
+
+            width: 1000px;
+            min-height: 1414px;
+
+            margin: 30px auto;
+
+            padding: 130px 100px 100px;
+
+            background: white;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           DEKORASI ATAS
+        ========================= */
+
+        .gold-top {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 550px;
+            height: 130px;
+
+            background: #c8aa63;
+
+            clip-path: polygon(
+                20% 0,
+                100% 0,
+                100% 100%
+            );
+        }
+
+        .dark-top {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 360px;
+            height: 130px;
+
+            background: #293343;
+
+            clip-path: polygon(
+                55% 0,
+                100% 0,
+                100% 100%
+            );
+        }
+
+
+        /* =========================
+           TITIK-TITIK
+        ========================= */
+
+        .top-dots {
+            position: absolute;
+
+            top: 25px;
+            left: 42px;
+
+            width: 430px;
+        }
+
+        .top-dots span {
+            display: inline-block;
+
+            width: 8px;
+            height: 8px;
+
+            margin-right: 27px;
+            margin-bottom: 28px;
+
+            border-radius: 50%;
+
+            background: #333;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            align-items: center;
+
+            gap: 48px;
+
+            margin-bottom: 45px;
+        }
+
+        .profile-photo {
+            width: 205px;
+            height: 210px;
+
+            object-fit: cover;
+
+            border-radius: 30px;
+
+            border: 4px solid #c8aa63;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .header-info h1 {
+            font-size: 43px;
+
+            font-weight: 400;
+
+            letter-spacing: 1px;
+
+            color: #35383e;
+
+            margin-bottom: 25px;
+
+            white-space: nowrap;
+        }
+
+        .contact {
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           BAGIAN CV
+        ========================= */
+
+        .section {
+            position: relative;
+            z-index: 2;
+
+            margin-bottom: 23px;
+        }
+
+        .section-title {
+            width: 405px;
+
+            padding: 9px 35px;
+
+            margin-bottom: 13px;
+
+            background: #3d4553;
+
+            color: white;
+
+            font-size: 27px;
+
+            font-weight: bold;
+
+            border-radius: 0 15px 15px 0;
+        }
+
+
+        /* =========================
+           DATA PRIBADI
+        ========================= */
+
+        .personal-data {
+            display: grid;
+
+            grid-template-columns: 290px 1fr;
+
+            row-gap: 5px;
+
+            font-size: 18px;
+
+            line-height: 1.45;
+        }
+
+        .personal-data .label::before {
+            content: "•";
+
+            margin-right: 15px;
+        }
+
+        .personal-data .value::before {
+            content: ": ";
+        }
+
+
+        /* =========================
+           LIST
+        ========================= */
+
+        .list {
+            list-style: none;
+
+            font-size: 18px;
+
+            line-height: 1.55;
+        }
+
+        .list li {
+            margin-bottom: 4px;
+        }
+
+        .list li::before {
+            content: "•";
+
+            margin-right: 15px;
+        }
+
+
+        /* =========================
+           TITIK KANAN
+        ========================= */
+
+        .right-dots {
+            position: absolute;
+
+            right: 25px;
+            top: 820px;
+
+            width: 60px;
+        }
+
+        .right-dots span {
+            display: block;
+
+            width: 8px;
+            height: 8px;
+
+            margin-bottom: 28px;
+
+            border-radius: 50%;
+
+            background: #333;
+        }
+
+
+        /* =========================
+           DEKORASI BAWAH
+        ========================= */
+
+        .bottom-dark {
+            position: absolute;
+
+            right: 0;
+            bottom: 0;
+
+            width: 580px;
+            height: 210px;
+
+            background: #293343;
+
+            clip-path: polygon(
+                100% 0,
+                100% 100%,
+                0 100%
+            );
+        }
+
+        .bottom-gold {
+            position: absolute;
+
+            right: 0;
+            bottom: 0;
+
+            width: 510px;
+            height: 120px;
+
+            background: #c8aa63;
+
+            clip-path: polygon(
+                100% 0,
+                100% 100%,
+                0 100%
+            );
+        }
+
+        .bottom-line {
+            position: absolute;
+
+            right: 0;
+            bottom: 72px;
+
+            width: 520px;
+            height: 10px;
+
+            background: #c8aa63;
+
+            transform: rotate(-19deg);
+            transform-origin: right center;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 1050px) {
+
+            .cv {
+                width: 95%;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            body {
+                background: white;
+            }
+
+            .cv {
+                width: 100%;
+
+                min-height: 100vh;
+
+                margin: 0;
+
+                padding: 100px 25px 150px;
+            }
+
+            .header {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 20px;
+            }
+
+            .profile-photo {
+                width: 160px;
+                height: 165px;
+            }
+
+            .header-info h1 {
+                font-size: 29px;
+
+                white-space: normal;
+            }
+
+            .contact {
+                font-size: 14px;
+            }
+
+            .section-title {
+                width: 100%;
+
+                font-size: 22px;
+            }
+
+            .personal-data {
+                display: block;
+
+                font-size: 15px;
+            }
+
+            .personal-data .label {
+                margin-top: 7px;
+            }
+
+            .personal-data .value {
+                padding-left: 25px;
+            }
+
+            .list {
+                font-size: 15px;
+            }
+
+            .right-dots {
+                display: none;
+            }
+
+            .gold-top {
+                width: 300px;
+                height: 90px;
+            }
+
+            .dark-top {
+                width: 200px;
+                height: 90px;
+            }
+
+            .bottom-dark {
+                width: 350px;
+                height: 140px;
+            }
+
+            .bottom-gold {
+                width: 300px;
+                height: 80px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="cv">
+
+
+        <!-- DEKORASI ATAS -->
+
+        <div class="gold-top"></div>
+
+        <div class="dark-top"></div>
+
+
+        <!-- TITIK ATAS -->
+
+        <div class="top-dots">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <br>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <img
+                src="foto-cv.jpg"
+                alt="Foto Rai Haidar Muhadzib"
+                class="profile-photo"
+            >
+
+            <div class="header-info">
+
+                <h1>
+                    RAI HAIDAR MUHADZIB
+                </h1>
+
+                <div class="contact">
+
+                    <div>
+                        ☎ 0856-4793-4108
+                    </div>
+
+                    <div>
+                        ✉ raihaidarmuhadzib@gmail.com
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DATA PRIBADI -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Data Pribadi
+            </div>
+
+            <div class="personal-data">
+
+                <div class="label">
+                    Nama
+                </div>
+
+                <div class="value">
+                    Rai Haidar Muhadzib
+                </div>
+
+
+                <div class="label">
+                    Tanggal lahir
+                </div>
+
+                <div class="value">
+                    19 Juli 2006
+                </div>
+
+
+                <div class="label">
+                    Alamat
+                </div>
+
+                <div class="value">
+                    Pengarasan, Kec. Bantarkawung,
+                    Kab. Brebes, Jawa Tengah
+                </div>
+
+
+                <div class="label">
+                    Usia
+                </div>
+
+                <div class="value">
+                    19 tahun
+                </div>
+
+
+                <div class="label">
+                    Jenis kelamin
+                </div>
+
+                <div class="value">
+                    Laki-laki
+                </div>
+
+
+                <div class="label">
+                    Status
+                </div>
+
+                <div class="value">
+                    Belum menikah
+                </div>
+
+
+                <div class="label">
+                    Kewarganegaraan
+                </div>
+
+                <div class="value">
+                    Indonesia
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PENDIDIKAN -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Pendidikan
+            </div>
+
+            <ul class="list">
+
+                <li>
+                    SD Negeri 01 Pengarasan
+                </li>
+
+                <li>
+                    MTs Tarbiyatul Athfal Pengarasan
+                </li>
+
+                <li>
+                    SMK Al-Furqon Bantarkawung
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- PENGALAMAN -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Pengalaman
+            </div>
+
+            <ul class="list">
+
+                <li>
+                    Mengikuti Praktek Kerja Lapangan
+                    (PKL) Di Rumah Mesin Yogyakarta
+                </li>
+
+                <li>
+                    Bekerja Di Bagian Gudang Wisma
+                    Kedoya Selama 9 Bulan
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- KEAHLIAN -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Keahlian
+            </div>
+
+            <ul class="list">
+
+                <li>
+                    Manajemen Waktu
+                </li>
+
+                <li>
+                    Kerja Tim
+                </li>
+
+                <li>
+                    Kreativitas
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- TITIK KANAN -->
+
+        <div class="right-dots">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- DEKORASI BAWAH -->
+
+        <div class="bottom-dark"></div>
+
+        <div class="bottom-gold"></div>
+
+        <div class="bottom-line"></div>
+
+
+    </div>
+
+</body>
+</html>
